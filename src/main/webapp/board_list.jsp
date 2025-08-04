@@ -11,9 +11,17 @@
     <link rel="stylesheet" type="text/css" href="css/boardlist_aside.css">
     <link rel="stylesheet" type="text/css" href="css/boardlist_main.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <title>클래식 기타 커뮤니티</title>
+    <title>í´ëì ê¸°í ì»¤ë®¤ëí°</title>
 </head>
 <body>
+	<%
+		String sid = (String) session.getAttribute("memberId");
+		if(sid == null) {
+			response.sendRedirect("login.jsp");
+		}
+		//로그인 하지 않으면 본 페이지를 볼수 없음.
+	%>
+
     <div id="wrap">
         <header>
             <a href="index.html"><img id="logo" src="images/logo.png"></a>
@@ -22,17 +30,17 @@
             </nav>
             <nav id="main_menu">
                 <ul>
-                    <li><a href="board_list.html">자유게시판</a></li>
-                    <li><a href="#">기타 연주</a></li>
-                    <li><a href="#">공동 구매</a></li>
-                    <li><a href="#">연주회 안내</a></li>
-                    <li><a href="#">회원 게시판</a></li>
+                    <li><a href="board_list.html">ìì ê²ìí</a></li>
+                    <li><a href="#">ê¸°í ì°ì£¼</a></li>
+                    <li><a href="#">ê³µë êµ¬ë§¤</a></li>
+                    <li><a href="#">ì°ì£¼í ìë´</a></li>
+                    <li><a href="#">íì ê²ìí</a></li>
                 </ul>
             </nav>
         </header>
 
         <aside>
-            <article id="login_box"> <!-- 로그인 박스 -->
+            <article id="login_box"> <!-- ë¡ê·¸ì¸ ë°ì¤ -->
                 <img id="login_title" src="images/ttl_login.png">
                 <div id="input_button">
                     <form>
@@ -48,15 +56,15 @@
                     <img src="images/btn_join.gif">
                     <img src="images/btn_search.gif">
                 </div>
-            </article> <!-- 로그인 박스 끝 -->
+            </article> <!-- ë¡ê·¸ì¸ ë°ì¤ ë -->
 
             <nav id="sub_menu">
                 <ul>
-                    <li><a href="#">+ 자유 게시판</a></li>
-                    <li><a href="#">+ 방명록</a></li>
-                    <li><a href="#">+ 공지사항</a></li>
-                    <li><a href="#">+ 등업 요청</a></li>
-                    <li><a href="#">+ 포토갤러리</a></li>
+                    <li><a href="#">+ ìì  ê²ìí</a></li>
+                    <li><a href="#">+ ë°©ëªë¡</a></li>
+                    <li><a href="#">+ ê³µì§ì¬í­</a></li>
+                    <li><a href="#">+ ë±ì ìì²­</a></li>
+                    <li><a href="#">+ í¬í ê°¤ë¬ë¦¬</a></li>
                 </ul>
             </nav>
 
@@ -72,18 +80,18 @@
 
         <main>
             <img src="images/comm.gif">
-            <h2 id="board_title">자유 게시판</h2>
+            <h2 id="board_title">ìì  ê²ìí</h2>
             <div id="total_search">
-                <div id="total">▷ 총 3개의 게시물이 있습니다.</div>
+                <div id="total">â· ì´ 3ê°ì ê²ìë¬¼ì´ ììµëë¤.</div>
                 <div id="search">
                     <div id="search_img">
                         <img src="images/select_search.gif">
                     </div>
                     <div id="search_select">
                         <select>
-                            <option>제목</option>
-                            <option>내용</option>
-                            <option>글쓴이</option>
+                            <option>ì ëª©</option>
+                            <option>ë´ì©</option>
+                            <option>ê¸ì´ì´</option>
                         </select>
                     </div>
                     <div id="search_input">
@@ -93,41 +101,41 @@
                         <img src="images/search_button.gif">
                     </div>
                 </div>
-            </div> <!-- total_search 끝 -->
+            </div> <!-- total_search ë -->
             
-            <table> <!-- 게시판 글 목록 테이블 -->
+            <table> <!-- ê²ìí ê¸ ëª©ë¡ íì´ë¸ -->
                 <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>글쓴이</th>
-                    <th>일시</th>
-                    <th>조회수</th>
+                    <th>ë²í¸</th>
+                    <th>ì ëª©</th>
+                    <th>ê¸ì´ì´</th>
+                    <th>ì¼ì</th>
+                    <th>ì¡°íì</th>
                 </tr>
                 <tr>
                     <td class="col1">1</td>
-                    <td class="col2"><a href="board_view.html">까스통님의 선물인 보드카가 정말 독하네요!!</a></td>
-                    <td class="col3">루바토</td>
+                    <td class="col2"><a href="board_view.html">ê¹ì¤íµëì ì ë¬¼ì¸ ë³´ëì¹´ê° ì ë§ ëíë¤ì!!</a></td>
+                    <td class="col3">ë£¨ë°í </td>
                     <td class="col4">2025-07-15</td>
                     <td class="col5">15</td>
                 </tr>
                 <tr>
                     <td class="col1">2</td>
-                    <td class="col2"><a href="board_view.html">까스통님의 선물인 보드카가 정말 독하네요!!</a></td>
-                    <td class="col3">루바토</td>
+                    <td class="col2"><a href="board_view.html">ê¹ì¤íµëì ì ë¬¼ì¸ ë³´ëì¹´ê° ì ë§ ëíë¤ì!!</a></td>
+                    <td class="col3">ë£¨ë°í </td>
                     <td class="col4">2025-07-15</td>
                     <td class="col5">45</td>
                 </tr>
                 <tr>
                     <td class="col1">3</td>
-                    <td class="col2"><a href="board_view.html">까스통님의 선물인 보드카가 정말 독하네요!!</a></td>
-                    <td class="col3">루바토</td>
+                    <td class="col2"><a href="board_view.html">ê¹ì¤íµëì ì ë¬¼ì¸ ë³´ëì¹´ê° ì ë§ ëíë¤ì!!</a></td>
+                    <td class="col3">ë£¨ë°í </td>
                     <td class="col4">2025-07-15</td>
                     <td class="col5">57</td>
                 </tr>
-            </table> <!-- 게시판 글 목록 끝 -->
+            </table> <!-- ê²ìí ê¸ ëª©ë¡ ë -->
             <div id="buttons">
                 <div class="buttons_col1">
-                    ◀ 이전 1 다음 ▶
+                    â ì´ì  1 ë¤ì â¶
                 </div>
                 <div class="buttons_col2">
                     <img src="images/list.png">
@@ -140,9 +148,9 @@
         <footer>
             <img id="footer_logo" src="images/footer_logo.gif">
             <ul id="address">
-                <li>서울시 강남구 삼성동  1234 우 : 123-1234</li>
+                <li>ìì¸ì ê°ë¨êµ¬ ì¼ì±ë  1234 ì° : 123-1234</li>
                 <li>TEL : 02-123-1234  Email : email@domain.com</li>
-                <li>copyright&copy; 루바토 All Rights Reserved</li>
+                <li>copyright&copy; ë£¨ë°í  All Rights Reserved</li>
             </ul>
             <ul id="footer_sns">
                 <li><img src="images/facebook.gif"></li>
